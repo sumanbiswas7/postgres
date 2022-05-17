@@ -19,5 +19,11 @@ router.get("/posts", (req, res) => {
     res.send(results.rows);
   });
 });
+router.get("/q1", (req, res) => {
+  db.query(queries.q1, (error, results) => {
+    if (error) return res.send(error);
+    res.send(results.rows);
+  });
+});
 
 module.exports = router;
